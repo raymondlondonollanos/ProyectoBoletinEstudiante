@@ -1,4 +1,4 @@
-/*Esta clase almacenara la informacion basica de un estudiante, identificacion,sexo, nacimiento, padres, direccion, enfermedades, hermanos Trateremos de utilizar para este ejercicio solamente punteros creado dinamicamente, apertura y cierre de memoria dinamica*/
+/*Esta clase almacenara la informacion basica de un estudiante, identificacion,sexo(es del tipo enum), nacimiento(del tipo enum), padres, direccion, enfermedades, hermanos Trateremos de utilizar para este ejercicio solamente punteros creado dinamicamente, apertura y cierre de memoria dinamica*/
 
 #include <string>
 
@@ -21,6 +21,16 @@ namespace estudiantes
 
 		//Como un string arrat por que almacenaremos numero mas ciudad de nacimiento
 		std::string* m_identificacion{ nullptr };
+
+		//nobmres de los padres, punteros a string
+		std::string* m_nombre_padre{ nullptr };
+		std::string* m_nombre_madre{ nullptr };
+
+		//direccion
+		std::string* m_direccion{ nullptr };
+
+		//enfermedades	
+		std::string* m_enfermedades{ nullptr };
 	};
 }
 
