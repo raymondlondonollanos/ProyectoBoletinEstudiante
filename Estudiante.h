@@ -56,10 +56,13 @@ namespace estudiantes
 		//Como un string arrat por que almacenaremos numero mas ciudad de nacimiento
 		std::string* m_identificacion{ nullptr };
 
+<<<<<<< HEAD
 		//enum sexo
 
 		//enum ciudad de nacimiento
 
+=======
+>>>>>>> a0ee70ff0fb0b971e8627b7f6f8e2edd6fa65c09
 		//nobmres de los padres, punteros a string
 		std::string* m_nombre_padre{ nullptr };
 		std::string* m_nombre_madre{ nullptr };
