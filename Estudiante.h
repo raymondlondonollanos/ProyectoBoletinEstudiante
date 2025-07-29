@@ -14,47 +14,36 @@ namespace estudiantes
 	class Estudiante
 	{
 	public:
+		
 		//constructores
 		Estudiante() = default; //constructor por defecto
-		Estudiante(const std::string* prim_nombre);
+		Estudiante(const std::string* apellidos, const std::string* nombres , const int* id);
 		~Estudiante(); //destructor'
 
 		//metodos de acceso
-		const std::string* getPrimNombre() const 
+		const std::string* getNombres() const 
 		{ 
-			return m_prim_nombre;
+			return m_nombres;
 		}
 
 		void copyProfunda(const Estudiante& estu)  
         {  
-            delete m_prim_nombre;  
-
-			if (estu.m_prim_nombre)
-			{
-				m_prim_nombre = new std::string(*estu.m_prim_nombre); // Fixed syntax error and removed redeclaration of m_prim_nombre  
-			}
-			else
-			{
-				m_prim_nombre = nullptr;
-			}
+            
 
 		}
 
-		void mostrar()
-		{
-			std::string nom = *m_prim_nombre;
-			std::cout << nom << std::endl;
-		}
+		
 	//creacion de datos miembros
 	private:
 		//Solamente declaramos los punteros, no los inicializamos
-		std::string* m_prim_nombre{ nullptr };
-		std::string* m_segu_nombre{ nullptr };
-		std::string* m_prim_apellido{ nullptr };
-		std::string* m_segu_apellido{ nullptr };
+		std::string* m_nombres{ nullptr };
+		std::string* m_apellidos{ nullptr };
 
 		//Como un string arrat por que almacenaremos numero mas ciudad de nacimiento
-		std::string* m_identificacion{ nullptr };
+		int* m_identificacion{ nullptr };
+
+		//ciudad tipo enum por agregacion para utilizarlo en otras clases
+
 	};
 }
 
