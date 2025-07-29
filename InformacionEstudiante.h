@@ -19,8 +19,14 @@ namespace informacionEstudiante
 			delete m_estudiante; // Liberamos la memoria del estudiante
 			m_estudiante = nullptr; // Evitamos dangling pointer
 		}
+
+		InformacionEstudiante(const InformacionEstudiante& info) = delete; // Deshabilitamos el constructor de copia para evitar copias no deseadas
+
+		InformacionEstudiante& operator=(const InformacionEstudiante& info) = delete; // Deshabilitamos el operador de asignación para evitar asignaciones no deseadas
+
 		// Método para mostrar la información del estudiante
 		void mostrarInformacion() const {
+			//verifica que el puntero m_estudiante no sea nulo antes de acceder a sus datos
 			if (m_estudiante) {
 				std::cout << "Nombres: " << *m_estudiante->getNombres() << std::endl;
 				std::cout << "Apellidos: " << *m_estudiante->getApellidos() << std::endl;
