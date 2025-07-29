@@ -25,17 +25,8 @@ namespace informacionEstudiante
 		InformacionEstudiante& operator=(const InformacionEstudiante& info) = delete; // Deshabilitamos el operador de asignación para evitar asignaciones no deseadas
 
 		// Método para mostrar la información del estudiante
-		void mostrarInformacion() const {
-			//verifica que el puntero m_estudiante no sea nulo antes de acceder a sus datos
-			if (m_estudiante) {
-				std::cout << "Nombres: " << *m_estudiante->getNombres() << std::endl;
-				std::cout << "Apellidos: " << *m_estudiante->getApellidos() << std::endl;
-				std::cout << "Identificacióo: " << *m_estudiante->getIdentificacion() << std::endl;
-				std::cout << "Ciudad de Nacimiento: " << ciudades::ciudadToString(m_ciudadNacimiento) << std::endl; // Convertimos a int para mostrar el enum
-			} else {
-				std::cout << "No hay información del estudiante." << std::endl;
-			}
-		}
+		void mostrarInformacion() const;
+
 	private:
 		const estudiantes::Estudiante* m_estudiante; // Puntero a un objeto Estudiante
 		ciudades::CiudadesColombia m_ciudadNacimiento; // Ciudad de nacimiento del estudiante
