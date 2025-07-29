@@ -12,13 +12,10 @@ namespace informacionEstudiante
 	{
 		public:
 		// Constructor que recibe un objeto Estudiante y una ciudad de nacimiento
-		InformacionEstudiante(const estudiantes::Estudiante* estudiante, ciudades::CiudadesColombia ciudadNacimiento)
+		InformacionEstudiante(const estudiantes::Estudiante& estudiante, ciudades::CiudadesColombia ciudadNacimiento)
 			: m_estudiante(estudiante), m_ciudadNacimiento(ciudadNacimiento) {}
 		// Destructor
-		~InformacionEstudiante() {
-			delete m_estudiante; // Liberamos la memoria del estudiante
-			m_estudiante = nullptr; // Evitamos dangling pointer
-		}
+		
 
 		InformacionEstudiante(const InformacionEstudiante& info) = delete; // Deshabilitamos el constructor de copia para evitar copias no deseadas
 
@@ -28,7 +25,7 @@ namespace informacionEstudiante
 		void mostrarInformacion() const;
 
 	private:
-		const estudiantes::Estudiante* m_estudiante; // Puntero a un objeto Estudiante
+		const estudiantes::Estudiante& m_estudiante; // Puntero a un objeto Estudiante
 		ciudades::CiudadesColombia m_ciudadNacimiento; // Ciudad de nacimiento del estudiante
 	};
 }

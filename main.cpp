@@ -13,7 +13,7 @@ int main() {
 		new int(123456)
 	);
 
-	informacionEstudiante::InformacionEstudiante infoEstudiante(estudiante, ciudades::CiudadesColombia::BOGOTA);
+	informacionEstudiante::InformacionEstudiante infoEstudiante(*estudiante, ciudades::CiudadesColombia::BOGOTA);
 
 	infoEstudiante.mostrarInformacion();
 	
