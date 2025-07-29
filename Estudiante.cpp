@@ -25,6 +25,9 @@ namespace estudiantes
 		}
 	
 	}
+
+
+
 	Estudiante::~Estudiante()
 	{
 		delete m_nombres;
@@ -35,5 +38,44 @@ namespace estudiantes
 		m_identificacion = nullptr; // Evitar dangling pointer
 
 	}
+
+	Estudiante::Estudiante(const Estudiante& estu)
+	{
+		copyProfunda(estu); // Llamamos al método de copia profunda
+	}
+
+	Estudiante& Estudiante::operator=(const Estudiante& estu)
+	{
+		{
+			if (this != &estu) // Evitar autoasignación
+			{
+				copyProfunda(estu); // Llamamos al método de copia profunda
+			}
+			return *this;
+		}
+	}
+
+	void Estudiante::copyProfunda(const Estudiante& estu)
+	{	
+			delete  m_nombres;
+			delete m_apellidos;
+			delete m_identificacion;
+
+			if (estu.m_nombres != nullptr && estu.m_apellidos != nullptr && estu.m_identificacion != nullptr)
+			{
+				m_nombres = new std::string(*estu.m_nombres);
+				m_apellidos = new std::string(*estu.m_apellidos);
+				m_identificacion = new int(*estu.m_identificacion);
+				m_ciudadNacimiento = estu.m_ciudadNacimiento; // Copiamos el enum directamente
+			}
+			else
+			{
+				std::cerr << "Error: Punteros nulos no permitidos en el constructor de copia." << std::endl;
+			}
+
+	}
+		
+	
+
 }
 
