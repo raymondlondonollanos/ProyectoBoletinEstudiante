@@ -128,11 +128,13 @@
     <ClCompile Include="Estudiante.cpp" />
     <ClCompile Include="InformacionEstudiante.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Sexo.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Ciudades.h" />
     <ClInclude Include="Estudiante.h" />
     <ClInclude Include="InformacionEstudiante.h" />
+    <ClInclude Include="Sexo.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
