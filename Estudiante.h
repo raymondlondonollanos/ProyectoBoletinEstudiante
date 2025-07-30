@@ -18,7 +18,7 @@ namespace estudiantes
 		
 		//constructores
 		Estudiante() = default; //constructor por defecto
-		Estudiante(const std::string* apellidos, const std::string* nombres , const int* id , ciudades::CiudadesColombia ciudad);
+		Estudiante(const std::string* apellidos, const std::string* nombres , const int* id , const std::string* nombreAcudienteMadre, const int* telefono_acudiente_madre, const std::string* nombreAcudientePadre, const int* telefono_acudiente_padre,ciudades::CiudadesColombia ciudad);
 		~Estudiante(); //destructor'
 
 		//constructor de copia
@@ -45,6 +45,26 @@ namespace estudiantes
 		const int* getIdentificacion() const 
 		{ 
 			return m_identificacion; 
+		}
+
+		const std::string* getNombrePadre() const 
+		{ 
+			return m_nombrePadre; 
+		}
+
+		const std::string* getNombreMadre() const 
+		{ 
+			return m_nombreMadre; 
+		}
+
+		const int* getTelefonoAcudientePadre() const 
+		{ 
+			return m_telefono_acudiente_padre; 
+		}
+
+		const int* getTelefonoAcudienteMadre() const 
+		{ 
+			return m_telefono_acudiente_madre; 
 		}
 
 		//no tiene conversion implicita
@@ -80,10 +100,46 @@ namespace estudiantes
 				m_identificacion = new int(*id); // Asignar nueva memoria
 			}
 		}
+
+		void setNombrePadre(const std::string* nombrePadre) 
+		{ 
+			if (nombrePadre != nullptr) 
+			{
+				delete m_nombrePadre; // Liberar memoria anterior
+				m_nombrePadre = new std::string(*nombrePadre); // Asignar nueva memoria
+			}
+		}
+
+		void setNombreMadre(const std::string* nombreMadre) 
+		{ 
+			if (nombreMadre != nullptr) 
+			{
+				delete m_nombreMadre; // Liberar memoria anterior
+				m_nombreMadre = new std::string(*nombreMadre); // Asignar nueva memoria
+			}
+		}
 		
 		void setCiudadNacimiento(ciudades::CiudadesColombia ciudad) 
 		{ 
 			m_ciudadNacimiento = ciudad; // Asignar el valor del enum directamente
+		}
+
+		void setTelefonoAcudientePadre(const int* telefonoPadre) 
+		{ 
+			if (telefonoPadre != nullptr) 
+			{
+				delete m_telefono_acudiente_padre; // Liberar memoria anterior
+				m_telefono_acudiente_padre = new int(*telefonoPadre); // Asignar nueva memoria
+			}
+		}
+
+		void setTelefonoAcudienteMadre(const int* telefonoMadre) 
+		{ 
+			if (telefonoMadre != nullptr) 
+			{
+				delete m_telefono_acudiente_madre; // Liberar memoria anterior
+				m_telefono_acudiente_madre = new int(*telefonoMadre); // Asignar nueva memoria
+			}
 		}
 
 	//creacion de datos miembros
@@ -97,6 +153,14 @@ namespace estudiantes
 
 		//ciudad tipo enum por agregacion para utilizarlo en otras clases
 		ciudades::CiudadesColombia m_ciudadNacimiento; // Ciudad de nacimiento, por defecto Bogotá
+
+		std::string* m_nombrePadre{ nullptr };
+
+		std::string* m_nombreMadre{ nullptr };
+
+		int* m_telefono_acudiente_padre{ nullptr };
+
+		int* m_telefono_acudiente_madre{ nullptr };
 
 	};
 }

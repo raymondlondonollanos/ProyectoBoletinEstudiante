@@ -12,6 +12,11 @@ int main() {
 	std::string* apellidos{};
 	int* identificacion{};
 	ciudades::CiudadesColombia ciudadNacimiento{};
+	std::string* nombreMadres{ nullptr };
+	int* telefAcudienteMadre{ nullptr };
+	std::string* nombrePadres{ nullptr };
+	int* teleAcudiente{ nullptr };
+
 
 	while (true) {
 

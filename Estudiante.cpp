@@ -1,17 +1,18 @@
 #include "Estudiante.h"
 #include <iostream>
+#include <string>
 
 /*, const std::string* segu_nombre, const std::string* prim_apellido, const std::string* segu_apellido, const std::string* identificacion, const std::string* nombre_padre, const std::string* nombre_madre, const std::string* direccion, const std::string* enfermedades*/
 
 namespace estudiantes
 {
 	Estudiante::Estudiante(const std::string* apellidos, const std::string* nombres
-	, const int* id , ciudades::CiudadesColombia ciudad)
+	, const int* id, const std::string* nombreAcudienteMadre, const int* telefono_acudiente_madre, const std::string* nombreAcudientePadre, const int* telefono_acudiente_padre, ciudades::CiudadesColombia ciudad)
 		: m_ciudadNacimiento{ciudad}
 	{
 
 		//validamos que los punteros pasados no sean nullptr
-		if(apellidos == nullptr || nombres == nullptr || id == nullptr)
+		if(apellidos == nullptr || nombres == nullptr || id == nullptr || nombreAcudienteMadre == nullptr || telefono_acudiente_madre == nullptr || nombreAcudientePadre == nullptr || telefono_acudiente_padre == nullptr)
 		{
 			std::cerr << "Error: Punteros nulos no permitidos." << std::endl;
 			return;
@@ -22,6 +23,7 @@ namespace estudiantes
 			m_nombres = new std::string(*nombres);
 			m_apellidos = new std::string(*apellidos);
 			m_identificacion = new int(*id);
+			m_nombreMadre = new std::string (*nombreAcudienteMadre);
 			//m_ciudadNacimiento = ciudad; // Asignamos el enum directamente
 
 		}
