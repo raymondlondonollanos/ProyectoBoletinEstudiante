@@ -24,6 +24,9 @@ namespace estudiantes
 			m_apellidos = new std::string(*apellidos);
 			m_identificacion = new int(*id);
 			m_nombreMadre = new std::string (*nombreAcudienteMadre);
+			m_nombrePadre = new std::string(*nombreAcudientePadre);
+			m_telefono_acudiente_madre = new int(*telefono_acudiente_madre);
+			m_telefono_acudiente_padre = new int(*telefono_acudiente_padre);
 			//m_ciudadNacimiento = ciudad; // Asignamos el enum directamente
 
 		}
@@ -40,6 +43,14 @@ namespace estudiantes
 		m_apellidos = nullptr; // Evitar dangling pointer
 		delete m_identificacion;
 		m_identificacion = nullptr; // Evitar dangling pointer
+		delete m_nombreMadre;
+		m_nombreMadre = nullptr;
+		delete m_nombrePadre;
+		m_nombreMadre = nullptr;
+		delete m_telefono_acudiente_madre;
+		m_telefono_acudiente_madre = nullptr;
+		delete m_telefono_acudiente_padre;
+		m_telefono_acudiente_padre = nullptr;
 
 	}
 
@@ -63,9 +74,14 @@ namespace estudiantes
 	{	
 			delete  m_nombres;
 			delete m_apellidos;
+			delete m_nombreMadre;
+			delete m_nombrePadre;
+			delete m_telefono_acudiente_madre;
+			delete m_telefono_acudiente_padre; 
 			delete m_identificacion;
 
-			if (estu.m_nombres != nullptr && estu.m_apellidos != nullptr && estu.m_identificacion != nullptr)
+			if (estu.m_nombres != nullptr && estu.m_apellidos != nullptr && estu.m_identificacion != nullptr && estu.m_nombreMadre != nullptr &&
+				estu.m_nombrePadre != nullptr && estu.m_telefono_acudiente_madre != nullptr && estu.m_telefono_acudiente_padre != nullptr)
 			{
 				m_nombres = new std::string(*estu.m_nombres);
 				m_apellidos = new std::string(*estu.m_apellidos);

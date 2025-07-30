@@ -8,14 +8,14 @@
 
 int main() {
 
-	std::string* nombres{};
-	std::string* apellidos{};
-	int* identificacion{};
+	std::string* nombres{ nullptr };
+	std::string* apellidos{ nullptr };
+	int* identificacion{nullptr};
 	ciudades::CiudadesColombia ciudadNacimiento{};
 	std::string* nombreMadres{ nullptr };
 	int* telefAcudienteMadre{ nullptr };
 	std::string* nombrePadres{ nullptr };
-	int* teleAcudiente{ nullptr };
+	int* teleAcudientePadre{ nullptr };
 
 
 	while (true) {
@@ -45,6 +45,27 @@ int main() {
 			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 			identificacion = new int(identificacionInput);
 			
+			std::cout << "Ingrese el nombre de la mama del estudiante: ";
+			std::string nombreMama;
+			std::getline(std::cin >> std::ws, nombreMama);
+			nombreMadres = new std::string(nombreMama);
+
+			std::cout << "Ingrese el nombre del papa del estudiante: ";
+			std::string nombrePapa;
+			std::getline(std::cin >> std::ws, nombrePapa);
+			nombrePadres = new std::string(nombrePapa);
+
+			std::cout << "Ingrese el no celular de la mama del estudiante: ";
+			int numMama;
+			std::cin >> numMama;
+			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+			telefAcudienteMadre = new int(numMama);
+
+			std::cout << "Ingrese el no celular del papa del estudiante: ";
+			int numPapa;
+			std::cin >> numPapa;
+			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+			teleAcudientePadre = new int(numPapa);
 
 			system("cls");
 
@@ -74,10 +95,8 @@ int main() {
 
 
 	estudiantes::Estudiante estudianteP{apellidos,
-		nombres,
-		identificacion,
-		ciudadNacimiento
-	};
+		nombres,identificacion, nombreMadres, telefAcudienteMadre, nombrePadres, teleAcudientePadre,
+		ciudadNacimiento};
 
 	delete	nombres;
 	delete apellidos;
