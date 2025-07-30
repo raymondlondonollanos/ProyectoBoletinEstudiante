@@ -1,7 +1,7 @@
 #include "Estudiante.h"
 #include "Ciudades.h"
 
-/*Esta clase manejara la informacion de los estudiantes, mostrando sus datos y pidientolos*/
+
 #pragma once
 #ifndef INFORMACION_ESTUDIANTE_H
 #define INFORMACION_ESTUDIANTE_H
@@ -12,9 +12,9 @@ namespace informacionEstudiante
 	{
 		public:
 		// Constructor que recibe un objeto Estudiante y una ciudad de nacimiento
-		InformacionEstudiante(const estudiantes::Estudiante& estudiante, ciudades::CiudadesColombia ciudadNacimiento)
-			: m_estudiante(estudiante), m_ciudadNacimiento(ciudadNacimiento) {}
-		// Destructor
+		InformacionEstudiante(const estudiantes::Estudiante& estudiante)
+			: m_estudiante(estudiante) {}
+		
 		
 
 		InformacionEstudiante(const InformacionEstudiante& info) = delete; // Deshabilitamos el constructor de copia para evitar copias no deseadas
@@ -25,8 +25,8 @@ namespace informacionEstudiante
 		void mostrarInformacion() const;
 
 	private:
-		const estudiantes::Estudiante& m_estudiante; // Puntero a un objeto Estudiante
-		ciudades::CiudadesColombia m_ciudadNacimiento; // Ciudad de nacimiento del estudiante
+		const estudiantes::Estudiante& m_estudiante; 
+
 	};
 }
 

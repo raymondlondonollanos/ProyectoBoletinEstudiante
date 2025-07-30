@@ -51,6 +51,7 @@ namespace ciudades
 		}
 	}
 
+	void mostrarCiudades();
 }
 
 

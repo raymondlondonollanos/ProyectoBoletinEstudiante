@@ -124,6 +124,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Ciudades.cpp" />
     <ClCompile Include="Estudiante.cpp" />
     <ClCompile Include="InformacionEstudiante.cpp" />
     <ClCompile Include="main.cpp" />

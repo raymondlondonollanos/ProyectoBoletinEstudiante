@@ -18,7 +18,7 @@ namespace estudiantes
 		
 		//constructores
 		Estudiante() = default; //constructor por defecto
-		Estudiante(const std::string* apellidos, const std::string* nombres , const int* id);
+		Estudiante(const std::string* apellidos, const std::string* nombres , const int* id , ciudades::CiudadesColombia ciudad);
 		~Estudiante(); //destructor'
 
 		//constructor de copia
@@ -96,7 +96,7 @@ namespace estudiantes
 		int* m_identificacion{ nullptr };
 
 		//ciudad tipo enum por agregacion para utilizarlo en otras clases
-		ciudades::CiudadesColombia m_ciudadNacimiento{ ciudades::CiudadesColombia::BOGOTA }; // Ciudad de nacimiento, por defecto Bogotá
+		ciudades::CiudadesColombia m_ciudadNacimiento; // Ciudad de nacimiento, por defecto Bogotá
 
 	};
 }

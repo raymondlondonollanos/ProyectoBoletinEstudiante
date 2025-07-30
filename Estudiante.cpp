@@ -6,7 +6,7 @@
 namespace estudiantes
 {
 	Estudiante::Estudiante(const std::string* apellidos, const std::string* nombres
-	, const int* id)
+	, const int* id , ciudades::CiudadesColombia ciudad)
 	{
 
 		//validamos que los punteros pasados no sean nullptr
@@ -21,6 +21,7 @@ namespace estudiantes
 			m_nombres = new std::string(*nombres);
 			m_apellidos = new std::string(*apellidos);
 			m_identificacion = new int(*id);
+			m_ciudadNacimiento = ciudad; // Asignamos el enum directamente
 
 		}
 	
