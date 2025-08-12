@@ -17,9 +17,9 @@ namespace informacionEstudiante
 		
 		
 
-		InformacionEstudiante(const InformacionEstudiante& info) = delete; // Deshabilitamos el constructor de copia para evitar copias no deseadas
+		//InformacionEstudiante(const InformacionEstudiante& info) = delete; // Deshabilitamos el constructor de copia para evitar copias no deseadas
 
-		InformacionEstudiante& operator=(const InformacionEstudiante& info) = delete; // Deshabilitamos el operador de asignación para evitar asignaciones no deseadas
+		//InformacionEstudiante& operator=(const InformacionEstudiante& info) = delete; // Deshabilitamos el operador de asignación para evitar asignaciones no deseadas
 
 		// Método para mostrar la información del estudiante
 		void mostrarInformacion() const;

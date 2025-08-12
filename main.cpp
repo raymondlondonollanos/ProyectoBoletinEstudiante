@@ -5,6 +5,7 @@
 #include "Ciudades.h"
 #include <limits>
 #include <cstdlib> 
+#include <vector>
 
 int main() {
 
@@ -98,13 +99,27 @@ int main() {
 		nombres,identificacion, nombreMadres, telefAcudienteMadre, nombrePadres, teleAcudientePadre,
 		ciudadNacimiento};
 
-	delete	nombres;
+	/*delete	nombres;
 	delete apellidos;
-	delete identificacion;
+	delete identificacion;*/
 
 	informacionEstudiante::InformacionEstudiante infoEstudiante(estudianteP);
 
 	infoEstudiante.mostrarInformacion();
-	
+
+
+	std::vector<estudiantes::Estudiante> p;
+
+	p.push_back(estudianteP);
+	std::cout << "Estudiante agregado exitosamente." << std::endl;
+
+	//const std::string* nombre = p[0].getNombres();
+	//
+	std::cout << *(p[0].getNombres());
+
+	std::vector<estudiantes::Estudiante> p1{ estudianteP };
+
+	std::cout << *(p1[0].getNombres());
+
 	return 0;
 }

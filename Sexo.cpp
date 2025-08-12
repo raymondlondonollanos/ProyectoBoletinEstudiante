@@ -9,4 +9,4 @@ void sexo::mostrarOpcionesSexo()
 		std::cout << "3. Otro\n";
 	}
 }
-}
+

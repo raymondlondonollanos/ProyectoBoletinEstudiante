@@ -39,16 +39,22 @@ namespace estudiantes
 	{
 		delete m_nombres;
 		m_nombres = nullptr; // Evitar dangling pointer
+
 		delete m_apellidos;
 		m_apellidos = nullptr; // Evitar dangling pointer
+
 		delete m_identificacion;
 		m_identificacion = nullptr; // Evitar dangling pointer
+
 		delete m_nombreMadre;
 		m_nombreMadre = nullptr;
+
 		delete m_nombrePadre;
-		m_nombreMadre = nullptr;
+		m_nombrePadre = nullptr;
+
 		delete m_telefono_acudiente_madre;
 		m_telefono_acudiente_madre = nullptr;
+
 		delete m_telefono_acudiente_padre;
 		m_telefono_acudiente_padre = nullptr;
 
@@ -63,7 +69,9 @@ namespace estudiantes
 	{
 		{
 			if (this != &estu) // Evitar autoasignación
+				
 			{
+			
 				copyProfunda(estu); // Llamamos al método de copia profunda
 			}
 			return *this;
@@ -72,13 +80,14 @@ namespace estudiantes
 
 	void Estudiante::copyProfunda(const Estudiante& estu)
 	{	
-			delete  m_nombres;
-			delete m_apellidos;
-			delete m_nombreMadre;
-			delete m_nombrePadre;
-			delete m_telefono_acudiente_madre;
-			delete m_telefono_acudiente_padre; 
-			delete m_identificacion;
+		delete m_nombres;
+		delete m_apellidos;
+		delete m_nombreMadre;
+		delete m_nombrePadre;
+		delete m_telefono_acudiente_madre;
+		delete m_telefono_acudiente_padre;
+		delete m_identificacion;
+
 
 			if (estu.m_nombres != nullptr && estu.m_apellidos != nullptr && estu.m_identificacion != nullptr && estu.m_nombreMadre != nullptr &&
 				estu.m_nombrePadre != nullptr && estu.m_telefono_acudiente_madre != nullptr && estu.m_telefono_acudiente_padre != nullptr)
@@ -86,6 +95,10 @@ namespace estudiantes
 				m_nombres = new std::string(*estu.m_nombres);
 				m_apellidos = new std::string(*estu.m_apellidos);
 				m_identificacion = new int(*estu.m_identificacion);
+				m_nombreMadre = new std::string(*estu.m_nombreMadre);
+				m_nombrePadre = new std::string(*estu.m_nombrePadre);
+				m_telefono_acudiente_madre = new int(*estu.m_telefono_acudiente_madre);
+				m_telefono_acudiente_padre = new int(*estu.m_telefono_acudiente_padre);
 				m_ciudadNacimiento = estu.m_ciudadNacimiento; // Copiamos el enum directamente
 			}
 			else
