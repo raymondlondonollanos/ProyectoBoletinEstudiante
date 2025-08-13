@@ -121,5 +121,10 @@ int main() {
 
 	std::cout << *(p1[0].getNombres());
 
+
+	estudiantes::Estudiante* puntero{ &estudianteP };
+
+	std::cout << "\nllamando puntero estudiante a puntero en clase normal: " << *(puntero->getNombres());
+
 	return 0;
 }

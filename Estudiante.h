@@ -152,7 +152,7 @@ namespace estudiantes
 		int* m_identificacion{ nullptr };
 
 		//ciudad tipo enum por agregacion para utilizarlo en otras clases
-		ciudades::CiudadesColombia m_ciudadNacimiento; // Ciudad de nacimiento, por defecto Bogotá
+		ciudades::CiudadesColombia m_ciudadNacimiento{}; // Ciudad de nacimiento, por defecto Bogotá
 
 		std::string* m_nombrePadre{ nullptr };
 
