@@ -30,7 +30,7 @@ namespace contenedorEstu
 
 	estudiantes::Estudiante& ContenedoraEstudiantes::operator[](int index)
 	{
-		// TODO: Insertar una instrucción "return" aquí
+		// TODO: Insertar una instrucciÃ³n "return" aquÃ­
 		return m_ptr_estudiante[index];
 	}
 	
@@ -55,7 +55,8 @@ namespace contenedorEstu
 		if (copy.m_ptr_estudiante)
 		{
 			m_tamano = copy.m_tamano;
-			
+
+			m_ptr_estudiante = new estudiantes::Estudiante[m_taman0];
 			//se realizala copia profunda
 			std::copy_n(copy.m_ptr_estudiante,m_tamano,m_ptr_estudiante);
 		}
